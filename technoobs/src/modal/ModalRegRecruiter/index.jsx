@@ -64,7 +64,7 @@ export const ModalRegRecruiter = ({closeModal}) => {
     const dataRecruiter = { ...data, ...type };
     setDataRecruiter(dataRecruiter);
   };
-
+console.log("oi")
   return (
    <>
     <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
