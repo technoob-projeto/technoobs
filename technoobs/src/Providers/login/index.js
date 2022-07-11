@@ -5,6 +5,7 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [userData, setUserData] = useState({})
 
     const handleIsOpen = () => {
         setModalIsOpen(true);
@@ -12,6 +13,11 @@ export const LoginProvider = ({ children }) => {
     const handleIsClose = () => {
         setModalIsOpen(false);
     }
+ function loginRequest(userData){
+    
+    
+ }
+
 
     return (
         <LoginContext.Provider value={{ modalIsOpen, handleIsOpen, handleIsClose}}>
