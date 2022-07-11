@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const RecruiterStyleForm = styled.form`
 width:100%;
-height: 50%;
+height: 100%;
 
-margin-top: 6%;
+
+
 
 background-color: #433882;
-opacity: .8;
+opacity: .9;
 
 h2{
     font-size: 42px;
