@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 import menuicon from "../../assets/menuicon.png";
 import {GiHamburgerMenu} from "react-icons/gi";
 import { useContext } from "react";
-import { LoginContext } from "../../Providers/login/index";
+import { LoginContext } from "../../providers/login"
 
 
 const Header = () => {

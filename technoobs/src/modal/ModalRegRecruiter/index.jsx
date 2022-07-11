@@ -13,8 +13,10 @@ import {
   RecruiterStyleForm,
 } from "./styles";
 
+
 export const ModalRegRecruiter = () => {
   const { setDataRecruiter } = useContext(CompanyContext);
+  
 
   const formSchema = yup.object().shape({
     name: yup
@@ -65,6 +67,7 @@ export const ModalRegRecruiter = () => {
   return (
     <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
       <h2>Register your Company</h2>
+      <button onClick={setDataRecruiter(false)}>X</button>
       <InputContainerDad>
         <InputContainer>
           <LabelStyle>NAME COMPANY</LabelStyle>
