@@ -1,31 +1,101 @@
 import React from "react";
 import Button from "../../components/Button/Button";
-import Input from "../../components/Input"
-import { InputContainer, InputContainerDad, RecruiterStyleForm } from "./styles";
-
-
+import Input from "../../components/Input";
+import { CompanyContext } from "../../providers/company";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import {
+  InputContainer,
+  InputContainerDad,
+  LabelStyle,
+  RecruiterStyleForm,
+} from "./styles";
 
 export const ModalRegRecruiter = () => {
+  const { setDataRecruiter } = useContext(CompanyContext);
+
+  const formSchema = yup.object().shape({
+    name: yup
+      .string()
+      .required("Nome da empresa obrigatorio")
+      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
+    bio: yup
+      .string()
+      .required("Nome obrigatorio")
+      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
+    username: yup
+      .string()
+      .required("Nome de usuario obrigatorio")
+      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
+    function: yup
+      .string()
+      .required("Cargo obrigatorio")
+      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
+    email: yup
+      .string()
+      .required("Email obrigatorio")
+      .email("Isso nao parece um email"),
+    site: yup
+      .string()
+      .required("site obrigatorio")
+      .url("Isso nao parece um site"),
+    password: yup.string().min(8, "Minimo 8 digitos").required("Obrigatorio"),
+    passwordconfirm: yup
+      .string()
+      .required("Confime a senha")
+      .oneOf([yup.ref("password")], "Senhas não conferem"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
+
+  const onSubmit = (data) => {
+    const type = { type: "company" };
+    const dataRecruiter = { ...data, ...type };
+    setDataRecruiter(dataRecruiter);
+  };
+
   return (
-    <RecruiterStyleForm>
+    <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
       <h2>Register your Company</h2>
       <InputContainerDad>
-      <InputContainer>
-      <Input/>
-      <Input/>
-      <Input/>
-      <Input/>
-      </InputContainer> 
-      <InputContainer>
-      <Input/>
-      <Input/>
-      <Input/>
-      <Input/>
-      </InputContainer>
+        <InputContainer>
+          <LabelStyle>NAME COMPANY</LabelStyle>
+          <Input register={register} nome="name" />
+          <span>{errors?.name?.message}</span>
+          <LabelStyle>BIO COMPANY</LabelStyle>
+          <Input register={register} nome="bio" />
+          <span>{errors?.bio?.message}</span>
+          <LabelStyle>EMAIL</LabelStyle>
+          <Input register={register} nome="email" />
+          <span>{errors?.email?.message}</span>
+          <LabelStyle>SITE</LabelStyle>
+          <Input register={register} nome="site" />
+          <span>{errors?.site?.message}</span>
+        </InputContainer>
+        <InputContainer>
+          <LabelStyle>USERNAME</LabelStyle>
+          <Input register={register} nome="username" />
+          <span>{errors?.username?.message}</span>
+          <LabelStyle>YOU FUNCTION</LabelStyle>
+          <Input register={register} nome="function" />
+          <span>{errors?.function?.message}</span>
+          <LabelStyle>PASSWORD</LabelStyle>
+          <Input register={register} nome="password" />
+          <span>{errors?.password?.message}</span>
+          <LabelStyle>PASSWORD CONFIRM</LabelStyle>
+          <Input register={register} nome="passwordconfirm" />
+          <span>{errors?.passwordconfirm?.message}</span>
+        </InputContainer>
       </InputContainerDad>
-      <Button text="Register" color="orange"/>      
+      <Button ty="submit" text="Register" color="orange" />
     </RecruiterStyleForm>
   );
 };
-
-

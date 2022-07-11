@@ -50,6 +50,7 @@ width: 100%;
     background-image: url(https://www.marcosantoni.it/public/foto/home-page_20220505144637.jpg);
     background-repeat: no-repeat;
     opacity: 0.5;
+    
   }
   .div__background--3 {
     width: 100%;

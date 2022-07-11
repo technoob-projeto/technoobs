@@ -1,7 +1,7 @@
 import React from "react";
 import { InputComponent } from "./style";
-const Input = () => {
-  return <InputComponent type="text" />;
+const Input = ({ register, nome, ...rest }) => {
+  return <InputComponent {...register(nome)} {...rest} />;
 };
 
 export default Input;
