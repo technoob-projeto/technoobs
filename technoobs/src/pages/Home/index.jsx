@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { HomeStyle } from "./styles";
 import Button from "../../components/Button/Button";
-import { ModalRegRecruiter } from "../../modal/ModalRegRecruiter";
+import { Register } from "../../components/Register";
 
 const Home = () => {
   const [openRegisterRecruiter, setOpenRegisterRecruiter] = useState(false);
+  const [isDev, setIsDev] = useState(false)
 
   function openModal() {
     setOpenRegisterRecruiter(true);
@@ -12,6 +13,14 @@ const Home = () => {
   function closeModal(){
     setOpenRegisterRecruiter(false)
   }
+function openModalDev(){
+  setIsDev(true)
+  openModal()
+}
+function openModalNotDev(){
+  setIsDev(false)
+  openModal()
+}
 
   return (
     <>
@@ -39,13 +48,13 @@ const Home = () => {
 
               <div className="h2__title--1">
                 <h2>Register you company and find different talents</h2>
-                <Button text="Register" color="green">
+                <Button callback={openModalDev} text="Register" color="green">
                   Register
                 </Button>
               </div>
               <div className="h2__title--2">
                 <h2>A way to prove yourself and get real work experience</h2>
-                <Button callback={openModal} text="Register" color="orange">
+                <Button callback={openModalNotDev} text="Register" color="orange">
                   Register
                 </Button>
               </div>
@@ -53,7 +62,7 @@ const Home = () => {
             <div className="div__background--3"></div>
           </>
         ) : (
-          <ModalRegRecruiter closeModal={closeModal}  />
+          <Register isDev={isDev} closeModal={closeModal}  />
         )}
       </HomeStyle>
     </>

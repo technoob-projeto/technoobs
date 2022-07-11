@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input";
-import { CompanyContext } from "../../providers/company/company";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,10 +13,11 @@ import {
   LabelStyle,
   RecruiterStyleForm,
 } from "./styles";
+import { CandidateContext } from "../../providers/candidate/candidate";
 
 
-export const ModalRegRecruiter = ({closeModal}) => {
-  const { setDataRecruiter } = useContext(CompanyContext);
+export const ModalRegDev = ({closeModal}) => {
+  const { setCandidate  } = useContext(CandidateContext);
   
 
   const formSchema = yup.object().shape({
@@ -61,11 +61,12 @@ export const ModalRegRecruiter = ({closeModal}) => {
   });
 
   const onSubmit = (data) => {
-    const type = { type: "company"};
-    const dataRecruiter = { ...data, ...type };
-    setDataRecruiter(dataRecruiter);
+    const type = { type: "candidate", myjobs:[]};
+    const dataCandidate = { ...data, ...type };
+    console.log("submit", dataCandidate)
+    setCandidate(dataCandidate);
   };
-console.log("oi")
+
   return (
    <>
     <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>

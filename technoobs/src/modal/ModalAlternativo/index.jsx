@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { LoginContext } from "../../providers/login/index";
 import { Container } from "./style.js";
 import background from "../../assets/background.png";
+import {MdCancel} from "react-icons/md"
 
 const ModalLogin = () => {
     const { modalIsOpen, handleIsOpen, handleIsClose } = useContext(LoginContext);
@@ -19,7 +20,7 @@ const ModalLogin = () => {
                 <div>
                     <img src={background} alt="img"/>
                 <Container>
-                    <button onClick={handleIsClose}>X</button>
+                    <MdCancel onClick={handleIsClose}></MdCancel>
                     <h2>LOGIN</h2>
                     <form>
                     <div class="user-box">
