@@ -9,6 +9,9 @@ const Home = () => {
   function openModal() {
     setOpenRegisterRecruiter(true);
   }
+  function closeModal(){
+    setOpenRegisterRecruiter(false)
+  }
 
   return (
     <>
@@ -16,7 +19,7 @@ const Home = () => {
         {!openRegisterRecruiter ? (
           <>
             <div className="div__title--container">
-         
+          <div className="div__background--3"></div>
               <div>
                 <h1>
                   <span style={{ color: "#C30B90" }}>function </span>
@@ -50,7 +53,7 @@ const Home = () => {
             <div className="div__background--3"></div>
           </>
         ) : (
-          <ModalRegRecruiter />
+          <ModalRegRecruiter closeModal={closeModal}  />
         )}
       </HomeStyle>
     </>

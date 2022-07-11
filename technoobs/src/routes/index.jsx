@@ -8,7 +8,7 @@ export const Router = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <Header />
+       <Header />  
         <Home />
         
       </Route>
