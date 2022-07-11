@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input";
-import { CompanyContext } from "../../providers/company";
+import { CompanyContext } from "../../providers/company/company";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+
 import {
   InputContainer,
   InputContainerDad,
@@ -14,7 +15,7 @@ import {
 } from "./styles";
 
 
-export const ModalRegRecruiter = () => {
+export const ModalRegRecruiter = ({closeModal}) => {
   const { setDataRecruiter } = useContext(CompanyContext);
   
 
@@ -59,15 +60,16 @@ export const ModalRegRecruiter = () => {
   });
 
   const onSubmit = (data) => {
-    const type = { type: "company" };
+    const type = { type: "company"};
     const dataRecruiter = { ...data, ...type };
     setDataRecruiter(dataRecruiter);
   };
 console.log("oi")
   return (
+   <>
     <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
+      <button className="button__close" onClick={closeModal}>X</button>
       <h2>Register your Company</h2>
-      <button onClick={setDataRecruiter(false)}>X</button>
       <InputContainerDad>
         <InputContainer>
           <LabelStyle>NAME COMPANY</LabelStyle>
@@ -100,5 +102,7 @@ console.log("oi")
       </InputContainerDad>
       <Button ty="submit" text="Register" color="orange" />
     </RecruiterStyleForm>
+   </>
+  
   );
 };

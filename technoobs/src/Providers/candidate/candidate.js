@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const CandidateContext = createContext([]);
+export const CandidateContext = createContext();
 
 export const CandidateProvider = ({ children }) => {
   // const [cadidate, setCandidate] = useState([]);

@@ -1,9 +1,11 @@
 import { createContext, useState } from "react";
+import { ModalRegRecruiter } from "../../modal/ModalRegRecruiter";
 
-export const CompanyContext = createContext([]);
+export const CompanyContext = createContext();
 
 export const CompanyProvider = ({ children }) => {
    const [dataRecruiter, setDataRecruiter] = useState({});
+  
 
 
    
@@ -20,6 +22,7 @@ export const CompanyProvider = ({ children }) => {
   return (
     <CompanyContext.Provider value={{setDataRecruiter}}>
       {children}
+     
     </CompanyContext.Provider>
   );
 };
