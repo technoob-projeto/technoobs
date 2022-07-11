@@ -2,10 +2,14 @@ import React from "react";
 import { HeaderStyle } from "./styles";
 import logo from "../../assets/logo.png";
 import menuicon from "../../assets/menuicon.png";
-import {GiHamburgerMenu} from "react-icons/gi"
+import {GiHamburgerMenu} from "react-icons/gi";
+import { useContext } from "react";
+import { LoginContext } from "../../providers/login"
 
 
 const Header = () => {
+  const { handleIsOpen } = useContext(LoginContext);
+
   return (
     <>
       <HeaderStyle>
@@ -13,12 +17,12 @@ const Header = () => {
           <GiHamburgerMenu size={50} color="#D9D9D9" />
         </li>
         <li>
-          <img className="img__logo" src={logo} />
+          <img className="img__logo" src={logo} alt=""/>
         </li>
         <li>
           <button>Home</button>
           <button>Developers</button>
-          <button>Login</button>
+          <button onClick={handleIsOpen}>Login</button>
         </li>
       </HeaderStyle>
     </>

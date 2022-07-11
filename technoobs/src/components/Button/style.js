@@ -9,7 +9,7 @@ export const ButtonComponent = styled.button`
         `;
       case "orange":
         return css`
-          background-color: #F08700;
+          background-color: #dc7d49;
         `;
       case "bug":
         return css`
@@ -40,8 +40,8 @@ export const ButtonComponent = styled.button`
 
         case "orange":
           return css`
-            background-color: #F08700;
-            box-shadow: 0 0 50px #F08700;
+            background-color: #ffa500;
+            box-shadow: 0 0 50px #ffa500;
           `;
         case "bug":
           return css`
