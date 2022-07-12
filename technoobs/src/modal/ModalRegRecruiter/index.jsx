@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input";
-import { CompanyContext } from "../../Providers/company/company";
+import { CompanyContext } from "../../providers/Company";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

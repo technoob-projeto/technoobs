@@ -17,12 +17,9 @@ export const CompanyProvider = ({ children }) => {
      dataRecruiter && submitRegister()
 
      
-     
-     
   return (
     <CompanyContext.Provider value={{setDataRecruiter}}>
       {children}
-     
     </CompanyContext.Provider>
   );
 };

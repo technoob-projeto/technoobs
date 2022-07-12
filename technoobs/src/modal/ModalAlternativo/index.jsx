@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import { useContext } from "react";
-import { LoginContext } from "../../Providers/login/index";
+import { LoginContext } from "../../providers/Login/index";
 import { Container } from "./style.js";
 import background from "../../assets/background.png";
 import { MdCancel } from "react-icons/md";
