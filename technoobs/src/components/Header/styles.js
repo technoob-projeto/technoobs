@@ -5,8 +5,8 @@ export const HeaderStyle = styled.ul`
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
-  height: 120px;
+  width: 97,5%;
+  height: 80px;
   padding: 1rem;
  
 
