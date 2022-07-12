@@ -14,7 +14,7 @@ import {
   RecruiterStyleForm,
   TechList,
 } from "./styles";
-import { CandidateContext } from "../../Providers/candidate/candidate";
+import { CandidateContext } from "../../providers/Candidate";
 
 import SpecialInput from "../../components/SpecialInput";
 
