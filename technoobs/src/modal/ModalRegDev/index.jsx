@@ -21,7 +21,7 @@ export const ModalRegDev = ({ closeModal }) => {
   const { setCandidate } = useContext(CandidateContext);
 
   const formSchema = yup.object().shape({
-    nome: yup
+    name: yup
       .string()
       .required("insira um nome valido!")
       .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "Apenas letras"),
@@ -35,13 +35,8 @@ export const ModalRegDev = ({ closeModal }) => {
       .string()
       .required("site porfavor")
       .url("Isso não parece um site"),
-    idade: yup
-      .number()
-      .required("obrigatorio!")
-      .positive("Use um numero positivo.")
-      .integer("Use um numero inteiro!"),
 
-    cidade: yup
+    country: yup
       .string()
       .required("Onde voce vive?")
       .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
@@ -58,15 +53,8 @@ export const ModalRegDev = ({ closeModal }) => {
       .required("Confime a senha")
       .oneOf([yup.ref("password")], "Senhas não conferem"),
 
-    bio: yup
-      .string()
-      .required("insira um nome valido!")
-      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "Apenas letras"),
-
-    profession: yup
-      .string()
-      .required("insira um nome valido!")
-      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "Apenas letras"),
+    bio: yup.string().required("insira uma bio!"),
+    profession: yup.string().required("insira uma profissão!"),
   });
 
   const {
@@ -91,40 +79,42 @@ export const ModalRegDev = ({ closeModal }) => {
         <h2>Register your Company</h2>
         <InputContainerDad>
           <InputContainer>
-            <LabelStyle>NAME:</LabelStyle>
+            <LabelStyle>NOME:</LabelStyle>
             <Input register={register} nome="name" />
             <span>{errors?.name?.message}</span>
-            <LabelStyle>YOUR MAIN EMAIL:</LabelStyle>
+            <LabelStyle>SEU EMAIL:</LabelStyle>
             <Input register={register} nome="email" />
-            <span>{errors?.bio?.message}</span>
-            <LabelStyle>YOUR SOCIAL:</LabelStyle>
-            <Input register={register} nome="social" />
             <span>{errors?.email?.message}</span>
-            <LabelStyle>YOUR AGE:</LabelStyle>
-            <Input register={register} nome="age" />
-            <span>{errors?.site?.message}</span>
 
-            <LabelStyle>WHERE DO U LIVE?</LabelStyle>
-            <Input register={register} nome="username" />
-            <span>{errors?.username?.message}</span>
+            <LabelStyle>SEU LINK:</LabelStyle>
+            <Input register={register} nome="social" />
+            <span>{errors?.url?.message}</span>
+
+            <LabelStyle>SUA IDADE:</LabelStyle>
+            <Input register={register} nome="age" />
+            <span>{errors?.age?.message}</span>
+
+            <LabelStyle>ONDE MORA?</LabelStyle>
+            <Input register={register} nome="country" />
+
+            <span>{errors?.country?.message}</span>
 
             <span>{errors?.function?.message}</span>
-            <LabelStyle>PASSWORD</LabelStyle>
+            <LabelStyle>SENHA</LabelStyle>
             <Input register={register} nome="password" />
             <span>{errors?.password?.message}</span>
-            <LabelStyle>PASSWORD CONFIRM</LabelStyle>
+            <LabelStyle>CONFIRME SENHA</LabelStyle>
             <Input register={register} nome="passwordconfirm" />
             <span>{errors?.passwordconfirm?.message}</span>
           </InputContainer>
 
           <InputContainer>
             <LabelStyle>PERSONAL BIO:</LabelStyle>
-            <textarea register={register} nome="name" />
-
-            <span>{errors?.name?.message}</span>
-            <LabelStyle>PROFESSION:</LabelStyle>
-            <Input register={register} nome="bio" />
+            <textarea register={register} nome="bio" />
             <span>{errors?.bio?.message}</span>
+
+            <LabelStyle>PROFESSION:</LabelStyle>
+            <Input register={register} nome="profession" />
             <TechList>
               <LabelStyle>YOUR MAIN SKILLS:</LabelStyle>
               <div>
