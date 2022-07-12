@@ -2,9 +2,15 @@ import React from "react";
 import { HeaderStyle } from "./styles";
 import logo from "../../assets/logo.png";
 
+import menuicon from "../../assets/menuicon.png";
 import {GiHamburgerMenu} from "react-icons/gi";
 import { useContext } from "react";
-import { LoginContext } from "../../providers/Login"
+import { LoginContext } from "../../Providers/login"
+
+
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useContext } from "react";
+import { LoginContext } from "../../Providers/login";
 
 const Header = () => {
   const { handleIsOpen } = useContext(LoginContext);

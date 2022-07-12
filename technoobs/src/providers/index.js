@@ -1,6 +1,6 @@
-import { LoginProvider } from "../providers/Login/index";
-import { CandidateProvider } from "../providers/Candidate";
-import { CompanyProvider } from "./Company";
+import { LoginProvider } from "./login";
+import { CandidateProvider } from "./candidate/candidate";
+import { CompanyProvider } from "./company/company";
 
 const Providers = ({ children }) => {
   return (
