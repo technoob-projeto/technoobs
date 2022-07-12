@@ -15,7 +15,9 @@ import {
   TechList,
 } from "./styles";
 import { CandidateContext } from "../../Providers/candidate/candidate";
+
 import SpecialInput from "../../components/SpecialInput";
+
 
 export const ModalRegDev = ({ closeModal }) => {
   const { setCandidate } = useContext(CandidateContext);
