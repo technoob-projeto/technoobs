@@ -84,7 +84,7 @@ export const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;
 }
 
-form a {
+.btn-login {
     position: relative;
 
     display: inline-block;
@@ -104,7 +104,7 @@ form a {
     cursor: pointer;
 }
 
-a:hover {
+.btn-login:hover {
     background: #179AB1;
     color: #fff;
     font-size: 16px;
@@ -115,12 +115,12 @@ a:hover {
                 0 0 100px #179AB1;
 }
 
-a span {
+.btn-login span {
     position: absolute;
     display: block;
 }
 
-a span:nth-child(1) {
+.btn-login span:nth-child(1) {
     top: 0;
     left: -100%;
 
@@ -140,7 +140,7 @@ a span:nth-child(1) {
     }
 }
 
-a span:nth-child(2) {
+.btn-login span:nth-child(2) {
     top: 0;
     right: 100%;
 
@@ -160,7 +160,7 @@ a span:nth-child(2) {
     }
 }
 
-a span:nth-child(3) {
+.btn-login span:nth-child(3) {
     bottom: 0;
     right: -100%;
 
@@ -182,7 +182,7 @@ a span:nth-child(3) {
     }
 }
 
-a span:nth-child(4) {
+.btn-login span:nth-child(4) {
     bottom: -100%;
     left: 0;
 

@@ -5,7 +5,7 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState({});
 
     const handleIsOpen = () => {
         setModalIsOpen(true);
