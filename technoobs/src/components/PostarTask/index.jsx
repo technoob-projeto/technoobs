@@ -12,11 +12,12 @@ export const PostarTask = () => {
           <small>Linguagem:</small>
           <small>Requisito Nv: 1</small>
           <small>Vagas:(devs) 2</small>
+
           <small>Status:Aberto</small>
           <small>Type:Job/Task</small>
         </div>
         <div>
-          <p>Display Cards Candidatos:</p>
+          <p>Display Card Candidatos:</p>
           <DevCard />
         </div>
       </HomeStyle>
