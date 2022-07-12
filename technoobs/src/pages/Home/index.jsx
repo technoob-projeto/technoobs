@@ -5,30 +5,30 @@ import { Register } from "../../components/Register";
 
 const Home = () => {
   const [openRegisterRecruiter, setOpenRegisterRecruiter] = useState(false);
-  const [isDev, setIsDev] = useState(false)
+  const [isDev, setIsDev] = useState(false);
 
   function openModal() {
     setOpenRegisterRecruiter(true);
   }
-  function closeModal(){
-    setOpenRegisterRecruiter(false)
+  function closeModal() {
+    setOpenRegisterRecruiter(false);
   }
-function openModalDev(){
-  setIsDev(true)
-  openModal()
-}
-function openModalNotDev(){
-  setIsDev(false)
-  openModal()
-}
+  function openModalDev() {
+    setIsDev(true);
+    openModal();
+  }
+  function openModalNotDev() {
+    setIsDev(false);
+    openModal();
+  }
 
   return (
     <>
-    <HomeStyle>
+      <HomeStyle>
         {!openRegisterRecruiter ? (
           <>
             <div className="div__title--container">
-          <div className="div__background--3"></div>
+              <div className="div__background--3"></div>
               <div>
                 <h1>
                   <span style={{ color: "#C30B90" }}>function </span>
@@ -43,26 +43,29 @@ function openModalNotDev(){
                   <span style={{ color: "#C30B90" }}>&#125;</span>
                 </h1>
               </div>
-                  </div>
-              <div className="button__container">
-
+            </div>
+            <div className="button__container">
               <div className="h2__title--1">
                 <h2>Register you company and find different talents</h2>
-                <Button callback={openModalDev} text="Register" color="green">
+                <Button
+                  callback={openModalNotDev}
+                  text="Register"
+                  color="green"
+                >
                   Register
                 </Button>
               </div>
               <div className="h2__title--2">
                 <h2>A way to prove yourself and get real work experience</h2>
-                <Button callback={openModalNotDev} text="Register" color="orange">
+                <Button callback={openModalDev} text="Register" color="orange">
                   Register
                 </Button>
               </div>
-              </div>
+            </div>
             <div className="div__background--3"></div>
           </>
         ) : (
-          <Register isDev={isDev} closeModal={closeModal}  />
+          <Register isDev={isDev} closeModal={closeModal} />
         )}
       </HomeStyle>
     </>
