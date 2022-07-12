@@ -13,7 +13,7 @@ import {
   LabelStyle,
   RecruiterStyleForm,
 } from "./styles";
-import { CandidateContext } from "../../providers/candidate/candidate";
+import { CandidateContext } from "../../Providers/candidate/candidate";
 
 
 export const ModalRegDev = ({closeModal}) => {

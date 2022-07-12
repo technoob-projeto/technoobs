@@ -8,13 +8,19 @@ function DashRecruiter() {
     <DashStyle>
       <div className="div__container__content">
         <div>
-        <input className="input__pesquisa"></input>
+        <input className="input__pesquisa" placeholder="Search"></input>
         <FcSearch size={32} />
           </div>
           <div className="div__container--button">
             <Button text="Add Task" color="green" />
             <Button text="Add Job" color="green" />
         </div>
+      </div>
+      <div className="div__container__job-card">
+        <div className="div__container__candidateCard">
+
+      </div>
+
       </div>
     </DashStyle>
   );
