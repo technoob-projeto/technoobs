@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import {MdCancel} from "react-icons/md"
+import { MdCancel } from "react-icons/md";
 
 import {
   InputContainer,
@@ -15,10 +15,8 @@ import {
   RecruiterStyleForm,
 } from "./styles";
 
-
-export const ModalRegRecruiter = ({closeModal}) => {
+export const ModalRegRecruiter = ({ closeModal }) => {
   const { setDataRecruiter } = useContext(CompanyContext);
-  
 
   const formSchema = yup.object().shape({
     name: yup
@@ -61,49 +59,48 @@ export const ModalRegRecruiter = ({closeModal}) => {
   });
 
   const onSubmit = (data) => {
-    const type = { type: "company"};
+    const type = { type: "company" };
     const dataRecruiter = { ...data, ...type };
     setDataRecruiter(dataRecruiter);
   };
-console.log("oi")
+  console.log("oi");
   return (
-   <>
-    <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
-      <MdCancel className="button__close" onClick={closeModal}></MdCancel>
-      <h2>Register your Company</h2>
-      <InputContainerDad>
-        <InputContainer>
-          <LabelStyle>NAME COMPANY</LabelStyle>
-          <Input register={register} nome="name" />
-          <span>{errors?.name?.message}</span>
-          <LabelStyle>BIO COMPANY</LabelStyle>
-          <Input register={register} nome="bio" />
-          <span>{errors?.bio?.message}</span>
-          <LabelStyle>EMAIL</LabelStyle>
-          <Input register={register} nome="email" />
-          <span>{errors?.email?.message}</span>
-          <LabelStyle>SITE</LabelStyle>
-          <Input register={register} nome="site" />
-          <span>{errors?.site?.message}</span>
-        </InputContainer>
-        <InputContainer>
-          <LabelStyle>USERNAME</LabelStyle>
-          <Input register={register} nome="username" />
-          <span>{errors?.username?.message}</span>
-          <LabelStyle>YOU FUNCTION</LabelStyle>
-          <Input register={register} nome="function" />
-          <span>{errors?.function?.message}</span>
-          <LabelStyle>PASSWORD</LabelStyle>
-          <Input register={register} nome="password" />
-          <span>{errors?.password?.message}</span>
-          <LabelStyle>PASSWORD CONFIRM</LabelStyle>
-          <Input register={register} nome="passwordconfirm" />
-          <span>{errors?.passwordconfirm?.message}</span>
-        </InputContainer>
-      </InputContainerDad>
-      <Button ty="submit" text="Register" color="orange" />
-    </RecruiterStyleForm>
-   </>
-  
+    <>
+      <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
+        <MdCancel className="button__close" onClick={closeModal}></MdCancel>
+        <h2>Register your Company</h2>
+        <InputContainerDad>
+          <InputContainer>
+            <LabelStyle>NAME COMPANY</LabelStyle>
+            <Input register={register} nome="name" />
+            <span>{errors?.name?.message}</span>
+            <LabelStyle>BIO COMPANY</LabelStyle>
+            <Input register={register} nome="bio" />
+            <span>{errors?.bio?.message}</span>
+            <LabelStyle>EMAIL</LabelStyle>
+            <Input register={register} nome="email" />
+            <span>{errors?.email?.message}</span>
+            <LabelStyle>SITE</LabelStyle>
+            <Input register={register} nome="site" />
+            <span>{errors?.site?.message}</span>
+          </InputContainer>
+          <InputContainer>
+            <LabelStyle>USERNAME</LabelStyle>
+            <Input register={register} nome="username" />
+            <span>{errors?.username?.message}</span>
+            <LabelStyle>YOU FUNCTION</LabelStyle>
+            <Input register={register} nome="function" />
+            <span>{errors?.function?.message}</span>
+            <LabelStyle>PASSWORD</LabelStyle>
+            <Input register={register} nome="password" />
+            <span>{errors?.password?.message}</span>
+            <LabelStyle>PASSWORD CONFIRM</LabelStyle>
+            <Input register={register} nome="passwordconfirm" />
+            <span>{errors?.passwordconfirm?.message}</span>
+          </InputContainer>
+        </InputContainerDad>
+        <Button ty="submit" text="Register" color="orange" />
+      </RecruiterStyleForm>
+    </>
   );
 };

@@ -6,7 +6,14 @@ export const RecruiterStyleForm = styled.form`
 
   background-color: #433882;
   opacity: 0.9;
-
+  textarea {
+    width: 450px;
+    height: 250px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-family: "VT323", monospace;
+    padding: 10px;
+  }
   h2 {
     font-size: 42px;
     font-family: "VT323", monospace;
@@ -47,4 +54,12 @@ export const LabelStyle = styled.label`
   font-family: "VT323", monospace;
   color: #d9d9d9;
   margin-right: auto;
+`;
+
+export const TechList = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+  padding-right: 200px;
 `;
