@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Button/Button";
 import ButtonCards from "../ButtonCards/Button";
 import { HomeStyle } from "./styles";
 
