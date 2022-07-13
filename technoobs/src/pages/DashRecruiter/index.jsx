@@ -20,8 +20,12 @@ function DashRecruiter({ Authenticated, setAuthenticated }) {
       </div>
       <div className="div__container__job-card">
         <JobCard />
-        <div className="div__container__candidateCard">
-          <DevCard />
+        <div className="centraliza_devCard">
+
+          <div className="div__container__candidateCard">
+            <DevCard />
+            <DevCard />
+          </div>
         </div>
       </div>
     </DashStyle>

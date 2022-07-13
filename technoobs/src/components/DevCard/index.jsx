@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Button/Button";
 import ButtonCards from "../ButtonCards/Button";
 import { HomeStyle } from "./styles";
 
@@ -7,29 +6,29 @@ export const DevCard = () => {
   return (
     <>
       <HomeStyle>
-        <div>
-          <small>Class: Front End</small>
-          <small> Email: </small>
-          <small>Social:</small>
-          <small>Paiz: Brazil</small>
-          <small>cidade: 28</small>
+        <div className="informacoes">
+          <div className="avatar">
+            <span><small>Luiza anime</small></span>
+            <span className="imagem__avatar"><img src="" alt="avatar"/>*Imagem*</span>
+          </div>
+          <div className="info">
+            <span><small>Class: Front End</small></span>
+            <span><small> Bio: Desenvolvedora Jr</small></span>
+            <span><small> Email: luiza@gmail.com</small></span>
+            <span><small>GitHub: @luiza1234</small></span>
+            <span><small>País: França</small></span>
+            <span><small>Cidade: Paris</small></span>
+          </div>
         </div>
         <div>
-          <textarea name="bio" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div>
-          img
-          <span>nv: 0</span>
+          <img src="" alt="Estrelas"/>
         </div>
         <div>Nota: 4/5</div>
 
         <div>
           Skill:
-          <p>Lingaugem 1</p>
-          <p>Lingaugem 1</p>
-          <p>Lingaugem 1</p>
-          <p>Lingaugem 1</p>
-          <p>Lingaugem 1</p>
+          <p>Linguagem 1</p>
+          <p>Linguagem 1</p>
         </div>
 
         <div>
@@ -37,7 +36,6 @@ export const DevCard = () => {
           <p>Total Xp: 300</p>
         <ButtonCards text="Ver perfil" color="green"/>
         </div>
-        <div>Edit Profile</div>
       </HomeStyle>
     </>
   );

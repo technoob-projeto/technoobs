@@ -48,28 +48,33 @@ margin-top: 3%;
 
 .div__container__job-card{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
+    flex-direction: column;
+    align-items: center;
     max-width: 1000px;
-
-    margin-left: 140px;
-    margin-top: 50px;
-
+    margin: 50px auto;
     border: solid 2px;
-    border-radius: 20px;
-
+    border-radius: 15px;
     background-color: #3B603A;
 }
 
+.centraliza__devCards{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
 .div__container__candidateCard {
-    width: 290px;
+    width: 100%;
     height: 460px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
     margin: 10px 10px 15px 20px;
 
-    border: solid 2px;
+
     border-radius: 40px;
 }
 
+@med
 `

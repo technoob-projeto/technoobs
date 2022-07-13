@@ -25,7 +25,7 @@ export const ModalRegDev = ({ closeModal }) => {
     name: yup
       .string()
       .required("insira um nome valido!")
-      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "Apenas letras"),
+      .matches(/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/, "Apenas letras"),
 
     email: yup
       .string()
