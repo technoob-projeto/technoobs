@@ -23,15 +23,12 @@ export const ModalRegRecruiter = ({ closeModal }) => {
       .string()
       .required("Nome da empresa obrigatorio")
       .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras e sem espaços"),
-    bio: yup
-      .string()
-      .required("Nome obrigatorio")
-      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
+    bio: yup.string().required("Nome obrigatorio"),
     username: yup
       .string()
       .required("Nome de usuario obrigatorio")
       .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
-    function: yup
+    func: yup
       .string()
       .required("Cargo obrigatorio")
       .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
@@ -59,11 +56,9 @@ export const ModalRegRecruiter = ({ closeModal }) => {
   });
 
   const onSubmit = (data) => {
-    const type = { type: "company" };
-    const dataRecruiter = { ...data, ...type };
-    setDataRecruiter(dataRecruiter);
+    setDataRecruiter(data);
   };
-  console.log("oi");
+
   return (
     <>
       <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
@@ -89,7 +84,7 @@ export const ModalRegRecruiter = ({ closeModal }) => {
             <Input register={register} nome="username" />
             <span>{errors?.username?.message}</span>
             <LabelStyle>YOU FUNCTION</LabelStyle>
-            <Input register={register} nome="function" />
+            <Input register={register} nome="func" />
             <span>{errors?.function?.message}</span>
             <LabelStyle>PASSWORD</LabelStyle>
             <Input type="password" register={register} nome="password" />
