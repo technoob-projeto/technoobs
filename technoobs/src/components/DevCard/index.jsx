@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "../Button/Button";
+import ButtonCards from "../ButtonCards/Button";
 import { HomeStyle } from "./styles";
 
 export const DevCard = () => {
@@ -33,7 +35,7 @@ export const DevCard = () => {
         <div>
           <p>Tasks</p>
           <p>Total Xp: 300</p>
-          <button>Show Tasks</button>
+        <ButtonCards text="Ver perfil" color="green"/>
         </div>
         <div>Edit Profile</div>
       </HomeStyle>

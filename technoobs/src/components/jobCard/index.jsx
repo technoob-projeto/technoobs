@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "../Button/Button";
+import ButtonCards from "../ButtonCards/Button";
 import { HomeStyle } from "./styles";
 
 export const JobCard = () => {
@@ -17,10 +19,11 @@ export const JobCard = () => {
             <span>Requisito: nv 1</span>
           </div>
           <small>
-            descrição dasdsadsadjkasdkasdkasdkaskdkjasdkasjdkjasdjkasjkdaskjdkj
+            descrição crir um formulario 
           </small>
-          <button>Mensagem</button>
-          <button>Get Task</button>
+         <ButtonCards   text="Get task" color="orange"/>
+         <ButtonCards text="Messenge" color="green"/>
+
         </div>
       </HomeStyle>
     </>

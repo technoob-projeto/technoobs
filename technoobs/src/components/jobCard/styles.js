@@ -1,19 +1,20 @@
 import styled from "styled-components";
 
 export const HomeStyle = styled.div`
-  width: 100%;
-  height: 700px;
+  width: 600px;
+  height: 120px;
   background-color: #002a32;
   font-family: "VT323", monospace;
-  color: white;
-  border: 2px solid #f08700;
-  border-radius: 18px;
-  color: white;
-  font-family: 'VT323';
+ 
+  border: 2px solid #23ce6b;
+border-radius: 20px;
+font-family: 'VT323';
 font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 40px;
+
+font-size: 18px;
+
+color: white;
+
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   
   .div__title--container {
@@ -26,7 +27,11 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0
 margin-top: 100px;
     left: 13%;
     
-  
+    h1, span{
+      left:500px ;
+
+
+    }
   }
 
   .h2__title--1 {
@@ -48,7 +53,4 @@ margin-top: 100px;
     gap: 30px;
   }
 
-  
-  
-  
-`;
+  `

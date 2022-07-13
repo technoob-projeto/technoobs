@@ -48,14 +48,14 @@ ${(props) => {
     
 
   
-  width: 320px;
-  height: 50px;
+  width: 100px;
+  height: 30px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1px;
   color: white;
   font-family: "VT323";
-  font-size: 35px;
+  font-size: 15px;
   cursor: pointer;
   box-sizing: border-box;
   box-shadow: 4px 4px 0px #000000;
@@ -85,6 +85,6 @@ ${(props) => {
     }}
     transform: scale(1.03);
 
-    font-size: 50px;
+    font-size: 20px;
   }
 `;

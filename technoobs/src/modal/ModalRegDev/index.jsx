@@ -34,8 +34,8 @@ export const ModalRegDev = ({ closeModal }) => {
 
     social: yup
       .string()
-      .required("site porfavor")
-      .url("Isso não parece um site"),
+      .required("site porfavor"),
+      
 
     country: yup
       .string()
@@ -67,10 +67,8 @@ export const ModalRegDev = ({ closeModal }) => {
   });
 
   const onSubmit = (data) => {
-    const type = { type: "candidate", myjobs: [] };
-    const dataCandidate = { ...data, ...type };
-    console.log("submit", dataCandidate);
-    setCandidate(dataCandidate);
+   
+    setCandidate(data);
   };
 
   return (
@@ -111,7 +109,7 @@ export const ModalRegDev = ({ closeModal }) => {
 
           <InputContainer>
             <LabelStyle>PERSONAL BIO:</LabelStyle>
-            <textarea register={register} nome="bio" />
+            <Input register={register} nome="bio" />
             <span>{errors?.bio?.message}</span>
 
             <LabelStyle>PROFESSION:</LabelStyle>
