@@ -46,10 +46,10 @@ export const CompanyProvider = ({ children }) => {
       .catch((err) => console.log(err), toast.error(" Dados incorretos!"));
   }
 
-  dataRecruiter && submitRegister(dataRecruiter);
+  // dataRecruiter && submitRegister(dataRecruiter);
 
   return (
-    <CompanyContext.Provider value={{ setDataRecruiter }}>
+    <CompanyContext.Provider value={{ submitRegister }}>
       {children}
     </CompanyContext.Provider>
   );

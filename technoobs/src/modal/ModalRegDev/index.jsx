@@ -21,7 +21,7 @@ import SpecialInput from "../../components/SpecialInput";
 import { Axios } from "axios";
 
 export const ModalRegDev = ({ closeModal }) => {
-  const { setCandidate } = useContext(CandidateContext);
+  const { submitRegister } = useContext(CandidateContext);
 
   const [sprite, setSprite] = useState("bottts");
   const [seed, setSeed] = useState(1000);
@@ -81,8 +81,8 @@ export const ModalRegDev = ({ closeModal }) => {
 
   const onSubmit = (data) => {
     data.img = img;
-    setCandidate(data);
-    console.log(data);
+    submitRegister(data);
+    console.log(data, "onSubmit");
   };
 
   return (

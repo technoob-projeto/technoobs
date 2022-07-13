@@ -51,13 +51,14 @@ export const CandidateProvider = ({ children }) => {
 
         return history.push("/candidate");
       })
-      .catch((err) => console.log(err), toast.error(" Dados incorretos!"));
+      .catch((err) => toast.error(" Dados incorretos!"));
   }
 
-  candidate && submitRegister(candidate);
+  console.log(!!candidate, candidate);
+  //candidate && submitRegister(candidate);
 
   return (
-    <CandidateContext.Provider value={{ setCandidate }}>
+    <CandidateContext.Provider value={{ submitRegister }}>
       {children}
     </CandidateContext.Provider>
   );

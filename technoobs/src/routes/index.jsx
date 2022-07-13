@@ -18,10 +18,7 @@ export const Router = () => {
     <Switch>
       <Route exact path="/">
         <Header />
-        <Home
-          authenticated={authenticated}
-          setAuthenticated={setAuthenticated}
-        />
+        <Home />
       </Route>
 
       <Route exact path="/candidate" component={DashCandidate}>

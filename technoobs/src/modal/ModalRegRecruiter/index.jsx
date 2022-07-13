@@ -16,7 +16,7 @@ import {
 } from "./styles";
 
 export const ModalRegRecruiter = ({ closeModal }) => {
-  const { setDataRecruiter } = useContext(CompanyContext);
+  const { submitRegister } = useContext(CompanyContext);
 
   const formSchema = yup.object().shape({
     name: yup
@@ -56,7 +56,7 @@ export const ModalRegRecruiter = ({ closeModal }) => {
   });
 
   const onSubmit = (data) => {
-    setDataRecruiter(data);
+    submitRegister(data);
   };
 
   return (
