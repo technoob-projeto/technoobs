@@ -22,7 +22,7 @@ export const ModalRegRecruiter = ({ closeModal }) => {
     name: yup
       .string()
       .required("Nome da empresa obrigatorio")
-      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
+      .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras e sem espaços"),
     bio: yup
       .string()
       .required("Nome obrigatorio")
@@ -92,10 +92,10 @@ export const ModalRegRecruiter = ({ closeModal }) => {
             <Input register={register} nome="function" />
             <span>{errors?.function?.message}</span>
             <LabelStyle>PASSWORD</LabelStyle>
-            <Input register={register} nome="password" />
+            <Input type="password" register={register} nome="password" />
             <span>{errors?.password?.message}</span>
             <LabelStyle>PASSWORD CONFIRM</LabelStyle>
-            <Input register={register} nome="passwordconfirm" />
+            <Input type="password" register={register} nome="passwordconfirm" />
             <span>{errors?.passwordconfirm?.message}</span>
           </InputContainer>
         </InputContainerDad>

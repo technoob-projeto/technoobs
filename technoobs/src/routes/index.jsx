@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Header from "../components/Header";
-import  DashRecruiter  from "../pages/DashRecruiter";
+import DashRecruiter from "../pages/DashRecruiter";
 
 
 export const Router = () => {
@@ -31,7 +31,6 @@ return (
         <DashRecruiter authenticated={authenticated}
           setAuthenticated={setAuthenticated}/>
       </Route>
-
     </Switch>
   );
 };

@@ -18,7 +18,6 @@ import { CandidateContext } from "../../providers/Candidate";
 
 import SpecialInput from "../../components/SpecialInput";
 
-
 export const ModalRegDev = ({ closeModal }) => {
   const { setCandidate } = useContext(CandidateContext);
 
@@ -78,7 +77,7 @@ export const ModalRegDev = ({ closeModal }) => {
     <>
       <RecruiterStyleForm onSubmit={handleSubmit(onSubmit)}>
         <MdCancel className="button__close" onClick={closeModal}></MdCancel>
-        <h2>Register your Company</h2>
+        <h2>Register</h2>
         <InputContainerDad>
           <InputContainer>
             <LabelStyle>NOME:</LabelStyle>
