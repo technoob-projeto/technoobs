@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
+    font-family: 'VT323';
+    font-style: normal;
+    font-size: 20px;
     position: absolute;
 
     top: 60%;
     left: 22%;
 
     width: 380px;
-    height: 450px;
+    height: 490px;
 
     padding: 40px;
     transform: translate(40%, -60%);
@@ -20,8 +22,16 @@ export const Container = styled.div`
     border: 2px solid #000000;
     border-radius: 10px;
 
+    .img {
+        width: 700px;
+        height: 700px;
+
+    }
     span{
         color: red;
+    }
+    label {
+        color: #fff;
     }
 
     button {
@@ -36,8 +46,10 @@ export const Container = styled.div`
  h2 {
     margin: -20px 0 60px 0;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    
+    font-size: 25px;
+    font-family: 'VT323';
+    font-style: normal;
     text-align: center;
 }
 
@@ -85,10 +97,12 @@ export const Container = styled.div`
 .checkout {
     margin: 20px 20px;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'VT323';
+    font-style: normal;
+    font-size: 20px;
 }
 
-form a {
+button {
     position: relative;
 
     display: inline-block;
@@ -102,13 +116,13 @@ form a {
 
     overflow: hidden;
     transition: .5s;
-    margin: 50px  100px 20px 90px;
+    margin: 5px  100px 20px 90px;
     letter-spacing: 4px;
 
     cursor: pointer;
 }
 
-a:hover {
+button:hover {
     background: #179AB1;
     color: #fff;
     font-size: 16px;
@@ -117,94 +131,5 @@ a:hover {
                 0 0 25px #179AB1,
                 0 0 50px #179AB1,
                 0 0 100px #179AB1;
-}
-
-a span {
-    position: absolute;
-    display: block;
-}
-
-a span:nth-child(1) {
-    top: 0;
-    left: -100%;
-
-    width: 100%;
-    height: 4px;
-
-    background: linear-gradient(90deg, transparent, #179AB1);
-    animation: btn-anim1 1s linear infinite;
-} 
-
-@keyframes btn-anim1 {
-    0% {
-        left: -100%;
-    }
-    50%,100% {
-        left: 100%;
-    }
-}
-
-a span:nth-child(2) {
-    top: 0;
-    right: 100%;
-
-    width: 4px;
-    height: 100%;
-
-    background: linear-gradient(180deg, transparent,#179AB1);
-    animation-delay: .25s;
-}
-
-@keyframes btn-anim2 {
-    0% {
-        top: -100%;
-    }
-    50%,100% {
-        top: 100%;
-    }
-}
-
-a span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-
-    width: 100%;
-    height: 4px;
-
-    background: linear-gradient(270deg, transparent, #179AB1);
-    
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s;
-}
-
-@keyframes btn-anim3 {
-    0% {
-        right: -100%;
-    }
-    50%,100% {
-        right: 100%;
-    }
-}
-
-a span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-
-    width: 4px;
-    height: 100%;
-
-    background: linear-gradient(360deg, transparent, #179AB1);
-   
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s;
-}
-
-@keyframes btn-anim4 {
-    0% {
-        bottom: -100%;
-    }
-    50%,100% {
-        bottom: 100%;
-    }
 }
 `

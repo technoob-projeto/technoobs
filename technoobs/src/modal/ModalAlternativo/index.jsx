@@ -60,22 +60,42 @@ const ModalLogin = ({ authenticated, setAuthenticated }) => {
     <div>
       <button onClick={handleIsOpen}>Modal</button>
 
-      <Modal isOpen={modalIsOpen} onRequestClose={handleIsClose}>
-        <div>
-          <img src={background} alt="img" />
+      <Modal isOpen={modalIsOpen} onRequestClose={handleIsClose}
+      style={{
+      overlay: {
+     
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+
+    },
+    content: {
+      position: 'absolute',
+      paddin: '0',
+      margin: '0',
+      border: 'none',
+      background: 'none', 
+      width: 'Hug',
+      height: 'auto'
+    }
+    
+  }}>
+          
+        <div className="img">
           <Container>
             <MdCancel onClick={handleIsClose}></MdCancel>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <h2>LOGIN</h2>
 
+                <label>EMAIL:</label>
               <div className="user-box">
-                <label>EMAIL</label>
                 <Input register={register} nome="email" />
                 <span>{errors.email?.message}</span>
               </div>
+                <label>SENHA:</label>
               <div className="user-box">
-                <label>SENHA</label>
                 <Input register={register} nome="password" />
                 <span>{errors.password?.message}</span>
               </div>
