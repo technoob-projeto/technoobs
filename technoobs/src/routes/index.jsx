@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Header from "../components/Header";
-import  DashRecruiter  from "../pages/DashRecruiter";
+import DashRecruiter from "../pages/DashRecruiter";
 
 export const Router = () => {
   return (
@@ -16,10 +16,9 @@ export const Router = () => {
       <Route exact path="/dashboard/recruiter"></Route>
 
       <Route exact path="/recruiter" component={DashRecruiter}>
-        <Header/>   
-        <DashRecruiter/>
+        <Header />
+        <DashRecruiter />
       </Route>
-
     </Switch>
   );
 };
