@@ -7,7 +7,6 @@ export const HeaderStyle = styled.ul`
 
   width: 97, 5%;
   height: 80px;
-  padding: 1rem;
 
   background-color: #070707;
 
@@ -47,18 +46,19 @@ export const HeaderStyle = styled.ul`
   }
 
   .img__logo {
-    width: 150px;
+    width: 100px;
+    margin-left: 200px;
   }
   .img__menu {
     width: 50px;
     height: 50px;
   }
   button {
-    margin: 50px;
+    margin: 37px;
     background-color: transparent;
     border: none;
-    font-size: 42px;
-    font-weight: 900;
+    font-size: 30px;
+    font-weight: 500;
     color: #e9eaf1;
     font-family: "VT323", monospace;
     &:hover {
@@ -72,5 +72,22 @@ export const HeaderStyle = styled.ul`
   .btn__login {
     width: 100px;
     height: 70px;
+  }
+
+  @media (max-width: 750px) {
+    button {
+      margin: 5px;
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+      font-weight: 200;
+      color: #e9eaf1;
+      font-family: "VT323", monospace;
+    }
+
+    .img__logo {
+      width: 95px;
+      margin-left: 40px;
+    }
   }
 `;
