@@ -20,6 +20,10 @@ export const Container = styled.div`
     border: 2px solid #000000;
     border-radius: 10px;
 
+    span{
+        color: red;
+    }
+
     button {
         position: relative;
         margin-left: 290px;

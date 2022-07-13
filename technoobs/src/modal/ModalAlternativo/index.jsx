@@ -1,12 +1,60 @@
 import Modal from "react-modal";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../../providers/Login/index";
 import { Container } from "./style.js";
 import background from "../../assets/background.png";
 import { MdCancel } from "react-icons/md";
+import { toast } from "react-toastify";
+import { Link, Redirect, useHistory } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import api from "../../services";
+import Input from "../../components/Input";
 
-const ModalLogin = () => {
+const ModalLogin = ({ authenticated, setAuthenticated }) => {
   const { modalIsOpen, handleIsOpen, handleIsClose } = useContext(LoginContext);
+
+  const history = useHistory();
+
+  const schema = yup.object().shape({
+    email: yup
+      .string()
+      .email("isso nao parece um email")
+      .required("Preencha um email!"),
+    password: yup.string().required("Insira uma senha valida"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = ({ email, password, checkout }) => {
+    const data = { email, password };
+
+    api
+      .post("/login", data)
+      .then((response) => {
+        console.log(response);
+        const { accessToken } = response.data;
+        localStorage.setItem("token", JSON.stringify(accessToken));
+
+        toast.success("Seja bem vindo!");
+
+        history.push(checkout);
+
+        return handleIsClose();
+      })
+      .catch((err) => toast.error(" Dados incorretos!"));
+  };
+
+  if (authenticated) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>
@@ -17,31 +65,42 @@ const ModalLogin = () => {
           <img src={background} alt="img" />
           <Container>
             <MdCancel onClick={handleIsClose}></MdCancel>
-            <h2>LOGIN</h2>
-            <form>
-              <div class="user-box">
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <h2>LOGIN</h2>
+
+              <div className="user-box">
                 <label>EMAIL</label>
-                <input type="email" name="email" required="" />
+                <Input register={register} nome="email" />
+                <span>{errors.email?.message}</span>
               </div>
-              <div class="user-box">
+              <div className="user-box">
                 <label>SENHA</label>
-                <input type="password" name="senha" required="" />
+                <Input register={register} nome="password" />
+                <span>{errors.password?.message}</span>
               </div>
               <div className="checkout">
-                <input type="checkbox" name="" id="" />
+                <input
+                  {...register("checkout")}
+                  type="radio"
+                  name="checkout"
+                  id=""
+                  value="/candidate"
+                />
                 <label>LOGIN AS DEV</label>
               </div>
               <div className="checkout">
-                <input type="checkbox" name="" id="" />
+                <input
+                  {...register("checkout")}
+                  type="radio"
+                  name="checkout"
+                  id=""
+                  value="/recruiter"
+                />
                 <label>LOGIN AS COMPANY</label>
               </div>
-              <a>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                INICIAR
-              </a>
+
+              <button type="submit">LOGAR</button>
             </form>
           </Container>
         </div>
@@ -49,5 +108,4 @@ const ModalLogin = () => {
     </div>
   );
 };
-
 export default ModalLogin;

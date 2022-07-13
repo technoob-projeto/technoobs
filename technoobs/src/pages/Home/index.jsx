@@ -3,7 +3,7 @@ import { HomeStyle } from "./styles";
 import Button from "../../components/Button/Button";
 import { Register } from "../../components/Register";
 
-const Home = () => {
+const Home = ({Authenticated, setAuthenticated}) => {
   const [openRegisterRecruiter, setOpenRegisterRecruiter] = useState(false);
   const [isDev, setIsDev] = useState(false);
 

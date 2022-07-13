@@ -3,7 +3,7 @@ import Button from "../../components/Button/Button";
 import { DashStyle } from "./styles";
 import { FcSearch } from "react-icons/fc";
 
-function DashRecruiter() {
+function DashRecruiter({Authenticated, setAuthenticated}) {
   return (
     <DashStyle>
       <div className="div__container__content">
