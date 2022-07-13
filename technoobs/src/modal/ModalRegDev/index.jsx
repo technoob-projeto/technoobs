@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input";
 import { useContext } from "react";
@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { MdCancel } from "react-icons/md";
 
 import {
+  Avatar,
   InputContainer,
   InputContainerDad,
   LabelStyle,
@@ -17,9 +18,30 @@ import {
 import { CandidateContext } from "../../providers/Candidate";
 
 import SpecialInput from "../../components/SpecialInput";
+import { Axios } from "axios";
 
 export const ModalRegDev = ({ closeModal }) => {
   const { setCandidate } = useContext(CandidateContext);
+
+  const [sprite, setSprite] = useState("bottts");
+  const [seed, setSeed] = useState(1000);
+  const [img, setImg] = useState(
+    `https://avatars.dicebear.com/api/${sprite}/${seed}.svg`
+  );
+
+  // Function to set the current sprite type
+  function handleSprite(spritetype) {
+    setSprite(spritetype);
+  }
+
+  // Function to generate random seeds for the API
+  function handleGenerate() {
+    let x = Math.floor(Math.random() * 1000);
+    setSeed(x);
+    setImg(`https://avatars.dicebear.com/api/${sprite}/${seed}.svg`);
+  }
+
+  // Function to download image and save it in our computer
 
   const formSchema = yup.object().shape({
     name: yup
@@ -32,21 +54,12 @@ export const ModalRegDev = ({ closeModal }) => {
       .required("insira um email valido!")
       .email("isso parece um email pra voce?"),
 
-    social: yup
-      .string()
-      .required("site porfavor"),
-      
+    social: yup.string().required("site porfavor"),
 
     country: yup
       .string()
       .required("Onde voce vive?")
       .matches("^[a-zA-Z´]+[a-zA-Z´]{0,}$", "apenas letras"),
-
-    password: yup.string().min(8, "Minimo 8 digitos").required("Obrigatorio"),
-    passwordconfirm: yup
-      .string()
-      .required("Confime a senha")
-      .oneOf([yup.ref("password")], "Senhas não conferem"),
 
     password: yup.string().min(8, "Minimo 8 digitos").required("Obrigatorio"),
     passwordconfirm: yup
@@ -67,8 +80,9 @@ export const ModalRegDev = ({ closeModal }) => {
   });
 
   const onSubmit = (data) => {
-   
+    data.img = img;
     setCandidate(data);
+    console.log(data);
   };
 
   return (
@@ -100,10 +114,10 @@ export const ModalRegDev = ({ closeModal }) => {
 
             <span>{errors?.function?.message}</span>
             <LabelStyle>SENHA</LabelStyle>
-            <Input register={register} nome="password" />
+            <Input register={register} type="password" nome="password" />
             <span>{errors?.password?.message}</span>
             <LabelStyle>CONFIRME SENHA</LabelStyle>
-            <Input register={register} nome="passwordconfirm" />
+            <Input register={register} type="password" nome="passwordconfirm" />
             <span>{errors?.passwordconfirm?.message}</span>
           </InputContainer>
 
@@ -151,6 +165,34 @@ export const ModalRegDev = ({ closeModal }) => {
                 />
               </div>
             </TechList>
+            <Avatar>
+              {" "}
+              <div className="container">
+                <div className="nav">
+                  <p>Escolha seu avatar</p>
+                </div>
+                <div className="home">
+                  <div className="btns"></div>
+                  <div className="avatar">
+                    <img
+                      src={`https://avatars.dicebear.com/api/${sprite}/${seed}.svg`}
+                      alt="Sprite"
+                    />
+                  </div>
+                  <div className="generate">
+                    <button
+                      type="button"
+                      id="gen"
+                      onClick={() => {
+                        handleGenerate();
+                      }}
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Avatar>
           </InputContainer>
         </InputContainerDad>
         <Button ty="submit" text="Register" color="orange" />
