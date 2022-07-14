@@ -7,9 +7,10 @@ export const InputComponent = styled.input`
   border: 4px solid #000000;
   box-shadow: 4px 4px 0px #000000;
   font-family: "VT323";
-  font-size: 14px;
+  font-size: 1.8rem;
   padding-left: 10px;
   padding-right: 10px;
+  color: black;
 
 
 

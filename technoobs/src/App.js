@@ -1,13 +1,24 @@
 import { GlobalStyle } from "./style";
-import Home from "./pages/Home";
-import Header from "../src/components/Header";
+import { Router } from "./routes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Home />
+
+      <Router />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+      />
     </>
   );
 }
