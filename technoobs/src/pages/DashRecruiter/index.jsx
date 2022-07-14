@@ -1,9 +1,11 @@
-import Input from "../../components/Input";
 import Button from "../../components/Button/Button";
 import { DashStyle } from "./styles";
 import { FcSearch } from "react-icons/fc";
 import { JobCard } from "../../components/jobCard";
-import { DevCard } from "../../components/DevCard";
+import { DevCardCristiano } from "../../components/DevCards/DevCardCristiano";
+import { DevCardJoao } from "../../components/DevCards/DevCardJoao";
+import { DevCardNeo } from "../../components/DevCards/DevCardNeo";
+import { DevCardPedrinho } from "../../components/DevCards/DevCardPedrinho";
 
 function DashRecruiter({ Authenticated, setAuthenticated }) {
   return (
@@ -23,8 +25,10 @@ function DashRecruiter({ Authenticated, setAuthenticated }) {
         <div className="centraliza_devCard">
 
           <div className="div__container__candidateCard">
-            <DevCard />
-            <DevCard />
+            <DevCardCristiano />
+            <DevCardJoao />
+            <DevCardNeo />
+            <DevCardPedrinho />
           </div>
         </div>
       </div>

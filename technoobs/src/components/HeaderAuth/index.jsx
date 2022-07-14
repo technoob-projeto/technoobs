@@ -1,11 +1,8 @@
 import React from "react";
 import { HeaderStyle } from "./styles";
 import logo from "../../assets/logo.png";
-import { useContext } from "react";
-import { LoginContext } from "../../providers/Login";
 
 const HeaderAuth = () => {
-  const { handleIsOpen } = useContext(LoginContext);
 
   return (
     <>
@@ -14,7 +11,7 @@ const HeaderAuth = () => {
           <img className="img__logo" src={logo} alt="" />
         </li>
         <li>
-          <button onClick={handleIsOpen}>Logout</button>
+          <button>Logout</button>
         </li>
       </HeaderStyle>
     </>

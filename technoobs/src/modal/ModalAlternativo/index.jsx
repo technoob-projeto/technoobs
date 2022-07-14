@@ -1,4 +1,4 @@
-import Modal from "react-modal";
+import Modal from "react-modal"
 import { useContext, useState } from "react";
 import { LoginContext } from "../../providers/Login/index";
 import { Container } from "./style.js";
@@ -96,7 +96,7 @@ const ModalLogin = ({ authenticated, setAuthenticated }) => {
               </div>
                 <label>SENHA:</label>
               <div className="user-box">
-                <Input register={register} nome="password" />
+                <Input type="password" register={register} nome="password" />
                 <span>{errors.password?.message}</span>
               </div>
               <div className="checkout">

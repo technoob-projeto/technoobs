@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
 export const HomeStyle = styled.div`
-  width: 600px;
+  width: 80%;
   height: 120px;
   background-color: #002a32;
   font-family: "VT323", monospace;
+  margin-top: 15px;
  
   border: 2px solid #23ce6b;
-border-radius: 20px;
-font-family: 'VT323';
-font-style: normal;
+  border-radius: 20px;
+  font-family: 'VT323';
+  font-style: normal;
 
-font-size: 18px;
+  font-size: 18px;
 
-color: white;
+  color: white;
 
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   
   .div__title--container {
     width: auto;
@@ -31,6 +32,34 @@ margin-top: 100px;
       left:500px ;
 
 
+    }
+  }
+
+  .descricao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 5px;
+  }
+
+  .logo__nivel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 5px;
+    img{
+      width: 40px;
+    }
+  }
+
+  .botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    button{
+      margin: 5px;
     }
   }
 

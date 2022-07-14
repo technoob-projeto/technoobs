@@ -28,7 +28,7 @@ export const Router = () => {
       </Route>
 
       <Route exact path="/recruiter" component={DashRecruiter}>
-        <Header />
+        <HeaderAuth />
         <DashRecruiter
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}

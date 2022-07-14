@@ -6,6 +6,14 @@ export const DashStyle = styled.div`
     justify-content: space-between;
 }
 
+.lupa{
+    margin-top: 20px;
+}
+
+.jobs__tasks{
+    margin: 15px;
+}
+
 .pesquisar{
     display: flex;
     flex-direction: row;

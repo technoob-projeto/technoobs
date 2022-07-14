@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DashStyle = styled.div`
 width: 102.5%;
-height: 100%;
+height: 150%;
 margin-top: -40px;
 background-color: #002A32;
 
@@ -65,10 +65,11 @@ margin-top: 3%;
 
 .div__container__candidateCard {
     width: 100%;
-    height: 460px;
+    height: 1500px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 
     margin: 10px 10px 15px 20px;
 

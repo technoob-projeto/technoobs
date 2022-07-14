@@ -1,7 +1,6 @@
 import { DashStyle } from "./styles";
 import { FcSearch } from "react-icons/fc";
 import { DevCard } from "../../components/DevCard";
-import { TaskCard } from "../../components/taskCard";
 
 import ButtonCards from "../../components/ButtonCards/Button";
 import {useState} from 'react'
@@ -27,9 +26,9 @@ function DashCandidate({ Authenticated, setAuthenticated }) {
       <div className="container__input__buttons">
         <div className="pesquisar">
           <input className="input__pesquisa" placeholder="Search"></input>
-          <FcSearch size={70} />
+          <FcSearch className="lupa" size={70} />
         </div>
-          <div>
+          <div className="jobs__tasks">
           <ButtonCards callback={task} text="Jobs" color="orange"/>
           <ButtonCards callback={job}text="Taks" color="orange"/>
           </div>
