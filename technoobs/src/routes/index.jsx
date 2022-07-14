@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Header from "../components/Header";
 import DashRecruiter from "../pages/DashRecruiter";
 import DashCandidate from "../pages/DashCandidate";
+import HeaderAuth from "../components/HeaderAuth";
 
 export const Router = () => {
   const [authenticated, setAuthenticated] = useState(false);
@@ -22,7 +23,7 @@ export const Router = () => {
       </Route>
 
       <Route exact path="/candidate" component={DashCandidate}>
-        <Header />
+        <HeaderAuth />
         <DashCandidate />
       </Route>
 

@@ -6,6 +6,11 @@ export const DashStyle = styled.div`
     justify-content: space-between;
 }
 
+.pesquisar{
+    display: flex;
+    flex-direction: row;
+}
+
 .container__input__buttons{
     display: flex;
     justify-content: space-between;

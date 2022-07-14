@@ -47,7 +47,10 @@ export const ModalRegDev = ({ closeModal }) => {
     name: yup
       .string()
       .required("insira um nome valido!")
-      .matches(/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/, "Apenas letras"),
+      .matches(
+        "/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+s([A-zÀ-ÿ']s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/",
+        "Apenas letras"
+      ),
 
     email: yup
       .string()
@@ -130,6 +133,7 @@ export const ModalRegDev = ({ closeModal }) => {
             <Input register={register} nome="profession" />
             <TechList>
               <LabelStyle>YOUR MAIN SKILLS:</LabelStyle>
+
               <div>
                 <LabelStyle for="JavaScript"> JavaScript</LabelStyle>
                 <SpecialInput
