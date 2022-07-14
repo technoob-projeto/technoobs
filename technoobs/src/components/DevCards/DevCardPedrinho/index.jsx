@@ -25,8 +25,8 @@ export const DevCardPedrinho = () => {
         </div>
         <div>
           Skill:
-          <p>Linguagem 1</p>
-          <p>Linguagem 1</p>
+          <p>PHP</p>
+          <p>javascript</p>
         </div>
 
         <div>
