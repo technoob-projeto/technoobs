@@ -27,8 +27,8 @@ export const DevCard = () => {
 
         <div>
           Skill:
-          <p>Linguagem 1</p>
-          <p>Linguagem 1</p>
+          <p>Javascript</p>
+          <p>CSS</p>
         </div>
 
         <div>
