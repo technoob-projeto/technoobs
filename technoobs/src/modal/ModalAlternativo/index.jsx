@@ -1,4 +1,4 @@
-import Modal from "react-modal";
+import Modal from "react-modal"
 import { useContext, useState } from "react";
 import { LoginContext } from "../../providers/Login/index";
 import { Container } from "./style.js";

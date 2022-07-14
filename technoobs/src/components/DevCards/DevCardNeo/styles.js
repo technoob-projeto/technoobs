@@ -32,6 +32,13 @@ export const HomeStyle = styled.div`
     left: 13%;
   }
 
+  .imagem__avatar{
+    margin-top: 15px;
+    img{
+      width: 90px;
+    }
+  }
+
   .informacoes{
     display: flex;
     flex-direction: row;

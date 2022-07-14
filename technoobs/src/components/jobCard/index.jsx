@@ -6,22 +6,26 @@ export const JobCard = () => {
   return (
     <>
       <HomeStyle>
-        <div>
-          <small>Nome empresa</small>
-          <small> Titulo </small>
-          <div>
-            <small>gold: $$</small>
-            <small>xp: 20</small>
+      <div>
+          <div className="descricao">
+            <span><small>Magazine Luiza  </small></span>
+            <span><small>Formulário JS</small></span>
+            <div>
+              <small>gold: 50BRL</small>
+              <small>xp: 10</small>
+            </div>
           </div>
-          <div>
-            <img src="" alt="img" />
+          <div className="logo__nivel">
+            <img src="https://media.glassdoor.com/sqll/382606/magazine-luiza-squarelogo-1564520166281.png" alt="img" />
+            <span><small>
+              Descrição: Criar um formulario de cadastro
+            </small></span>
             <span>Requisito: nv 1</span>
           </div>
-          <small>
-            descrição crir um formulario 
-          </small>
-         <ButtonCards   text="Get task" color="orange"/>
-         <ButtonCards text="Messenge" color="green"/>
+          <div className="botoes">
+            <ButtonCards   text="Excluir" color="orange"/>
+            <ButtonCards text="Editar" color="green"/>
+          </div>
 
         </div>
       </HomeStyle>
