@@ -23,8 +23,6 @@ export const DevCard = () => {
         <div>
           <img className="estrelas" src="https://1.bp.blogspot.com/-hYEb8CYUj0Y/XaCzl-8CIuI/AAAAAAAAGS0/tAD7OZj_AYkiEPVFGR4TjKFTao0bp9jVwCLcBGAsYHQ/s1600/4%2Bestrelas.png" alt="Estrelas"/>
         </div>
-        <div>Nota: 4/5</div>
-
         <div>
           Skill:
           <p>Javascript</p>
